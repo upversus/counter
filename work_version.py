@@ -2,12 +2,11 @@ import numpy as np
 import cv2
 import time
 
-
-def nothing(valn):
+def nothing(pos):
+    global h1
+    h1=pos
     pass
-
-
-from matplotlib import pyplot as plt
+h1=0
 
 cv2.namedWindow("settings")
 cv2.resizeWindow('settings', 300, 300)
@@ -24,7 +23,7 @@ imgo = cv2.resize(imgo, dim, interpolation=cv2.INTER_AREA)
 
 while (1):
     img = imgo.copy()
-    h1 = cv2.getTrackbarPos('h1', 'settings')
+    
     cv2.imshow('begin', img)
     # img = cv2.pyrMeanShiftFiltering(img, 21, 51)
     # img = cv2.bilateralFilter(img, 30, 170, 255)
